@@ -49,8 +49,9 @@ const TitleText = styled.p`
   letter-spacing: 4.009px;
 `;
 const FujanImg = styled.img`
-  width: 300px;
+  width: 250px;
 `;
 const ConTent = styled.div`
   display: flex;
+  gap:100px;
 `;
