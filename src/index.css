@@ -2,10 +2,10 @@
   padding: 0;
   margin: 0;
   box-sizing: border-box;
-  font-family: "Pretendard-Medium";
+  font-family: "Pretendard-Regular";
 }
 body{
-  background-color: #FFFEF9;
+  background-color: #FFFCED;
 }
 
 @font-face {
