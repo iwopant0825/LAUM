@@ -3,7 +3,7 @@ import styled from "styled-components";
 export default function Home() {
   return (
     <>
-    <Dec1 src="/dec1.svg"/>
+    {/* <Dec1 src="/dec1.svg"/> */}
     <Layout>
       <TitleBox>
         <LogoBox>
