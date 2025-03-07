@@ -9,20 +9,40 @@ export default function Header() {
     setIsMenuOpen(!isMenuOpen);
   };
 
+  const scrollToSection = (sectionId) => {
+    const section = document.getElementById(sectionId);
+    if (section) {
+      window.scrollTo({
+        top: section.offsetTop,
+        behavior: "smooth",
+      });
+    }
+  };
+
+  const handleApplyClick = () => {
+    alert("아직은 지원 기간이 아니에요!");
+  };
+
   return (
     <>
       <Layout>
         <Sections2></Sections2>
         <Sections>
-          <SectionText on="true">소개</SectionText>
+          <SectionText on="true" onClick={() => scrollToSection("introduce")}>
+            소개
+          </SectionText>
           <img src="/Ellipse.svg" />
-          <SectionText on="false">커리큘럼</SectionText>
+          <SectionText on="true" onClick={() => scrollToSection("curriculum")}>
+            커리큘럼
+          </SectionText>
           <img src="/Ellipse.svg" />
-          <SectionText on="false">작품</SectionText>
+          <SectionText on="true" onClick={() => scrollToSection("prize")}>
+            수상실적
+          </SectionText>
         </Sections>
         <LogoImg src="/logo.svg" />
         <ApplyBox>
-          <ApplyButton>
+          <ApplyButton onClick={handleApplyClick}>
             <ApplyText>지원하기</ApplyText>
           </ApplyButton>
         </ApplyBox>
@@ -36,10 +56,16 @@ export default function Header() {
         animate={{ y: isMenuOpen ? 330 : 0 }}
         transition={{ duration: 0.4, ease: "easeInOut" }} // 마찰력 추가
       >
-        <SectionText on="true">소개</SectionText>
-        <SectionText on="false">커리큘럼</SectionText>
-        <SectionText on="false">작품</SectionText>
-        <ApplyButton>
+        <SectionText on="true" onClick={() => scrollToSection("introduce")}>
+          소개
+        </SectionText>
+        <SectionText on="true" onClick={() => scrollToSection("curriculum")}>
+          커리큘럼
+        </SectionText>
+        <SectionText on="true" onClick={() => scrollToSection("prize")}>
+          수상실적
+        </SectionText>
+        <ApplyButton onClick={handleApplyClick}>
           <ApplyText>지원하기</ApplyText>
         </ApplyButton>
       </MenuBox>
@@ -108,6 +134,7 @@ const SectionText = styled.p`
   font-style: normal;
   line-height: normal;
   opacity: ${(props) => (props.on === "true" ? 1 : 0.3)};
+  cursor: default;
   @media (max-width: 1500px) {
     font-size: 25px;
   }

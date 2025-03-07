@@ -29,7 +29,7 @@ const VectorSvg = () => {
         strokeLinecap="round"
         initial={{ pathLength: 0 }}
         animate={{ pathLength: isInView ? 1 : 0 }}
-        transition={{ duration: 5.5 }}
+        transition={{ duration: 7 }}
       />
       <defs>
         <linearGradient

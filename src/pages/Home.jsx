@@ -1,7 +1,11 @@
 import styled from "styled-components";
 import { motion } from "framer-motion"; // framer-motion import 추가
+import TextLogo from "../Svgs/TextLogo";
 
 export default function Home() {
+  const handleApplyClick = () => {
+    alert("아직은 지원 기간이 아니에요!");
+  };
   return (
     <>
       {/* <Dec1 src="/dec1.svg"/> */}
@@ -19,7 +23,7 @@ export default function Home() {
             //   },
             // }}
           >
-            <LogoImg src="/textlogo.svg" />
+            <TextLogo/>
             <LogoText>Learning Art, Unleash Me.</LogoText>
           </LogoBox>
           <ConText
@@ -40,6 +44,7 @@ export default function Home() {
           <ApplyBox
             initial="hidden"
             animate="visible"
+            onClick={handleApplyClick}
             // variants={{
             //   hidden: { opacity: 0, y: 20 },
             //   visible: {
@@ -143,12 +148,6 @@ const Layout = styled.div`
     justify-content: center;
   }
 `;
-const LogoImg = styled.img`
-  width: 485px;
-  @media (max-width: 1200px) {
-    width: 320px;
-  }
-`;
 
 const Img = styled(motion.img)`
   // Img를 motion.img로 변경
@@ -232,6 +231,7 @@ const ApplyText = styled.p`
   font-size: 25px;
   font-style: normal;
   line-height: normal;
+  cursor: default;
 `;
 const InstagramText = styled.p`
   color: #000;
