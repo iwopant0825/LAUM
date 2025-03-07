@@ -45,6 +45,10 @@ const ApplyBox = styled.div`
     width: 400px;
     height: 90px;
   }
+  @media (max-width: 800px) {
+    width: 100%;
+    height: 90px;
+  }
 `;
 const FooterBox = styled.div`
   display: flex;

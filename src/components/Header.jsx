@@ -84,7 +84,7 @@ const MenuBox = styled.div`
   display: flex;
   text-align: center;
   background: rgba(255, 255, 255, 0.945);
-  top: -30%; // 처음 위치를 화면 맨 위로 설정
+  top: -40%; // 처음 위치를 화면 맨 위로 설정
   @media (min-width: 1501px) {
     display: none;
   }

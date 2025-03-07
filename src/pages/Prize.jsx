@@ -86,6 +86,9 @@ const Layout = styled.div`
   @media (max-width: 1500px) {
     padding: 120px 60px;
   }
+  @media (max-width: 800px) {
+    padding: 120px 20px;
+  }
 `;
 const PrizeBox = styled.div`
   display: flex;

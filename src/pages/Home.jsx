@@ -159,17 +159,24 @@ const Img = styled(motion.img)`
   @media (max-width: 1200px) {
     width: 50%;
   }
+  @media (max-width: 800px) {
+    width: 48%;
+  }
 `;
 
 const ImgBox = styled.div`
   display: flex;
   flex-direction: column;
   gap: 15px;
+  align-items:center;
+  justify-content:center;
 `;
 const ImgGap = styled.div`
   display: flex;
   width: 100%;
   gap: 15px;
+  align-items:center;
+  justify-content:center;
 `;
 
 const TitleBox = styled.div`

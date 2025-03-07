@@ -15,6 +15,8 @@ const VectorSvg = () => {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true });
 
+  const duration = window.innerWidth <= 768 ? 10 : 7;
+
   return (
     <StyledSvg
       ref={ref}
@@ -29,7 +31,7 @@ const VectorSvg = () => {
         strokeLinecap="round"
         initial={{ pathLength: 0 }}
         animate={{ pathLength: isInView ? 1 : 0 }}
-        transition={{ duration: 7 }}
+        transition={{ duration }}
       />
       <defs>
         <linearGradient
