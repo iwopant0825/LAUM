@@ -63,7 +63,7 @@ const Layout = styled.div`
   width: 100%;
   display: flex;
   flex-direction: column;
-  padding: 80px 110px;
+  padding: 80px 180px;
   gap:50px;
 `;
 const Content = styled.div`

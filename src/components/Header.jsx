@@ -21,7 +21,7 @@ export default function Header(){
     )
 }
 const Layout = styled.div`
-    background-color: #FFFCED;
+    background-color:rgb(255, 255, 255);
     width:100%;
     display:flex;
     align-items:center;

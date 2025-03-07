@@ -47,7 +47,7 @@ const Layout = styled.div`
   height: 100vh;
   display: flex;
   align-items: center;
-  padding: 0 110px;
+  padding: 0 180px;
   justify-content:space-between;
 `;
 

@@ -5,7 +5,7 @@ export default function Introduce() {
     <Layout>
       <TitleText>Introduce</TitleText>
       <ConTent>
-        <FujanImg src="/fujan.svg" />
+        <FujanImg src="/fujan2.svg" />
         <MainText>
           <IntroduceText>
             만화&일러스트 동아리인 <NameText1>미르</NameText1><NameEText1>MIR</NameEText1>는 합병을 진행하는 타 동아리들과 함께
@@ -62,7 +62,7 @@ const MainText = styled.div`
 
 const IntroduceText = styled.p`
   color: #000;
-  font-size: 32.475px;
+  font-size: 26px;
   font-style: normal;
   line-height: 150%; /* 48.713px */
   letter-spacing: 3.897px;
@@ -83,7 +83,7 @@ const Layout = styled.div`
   width: 100%;
   display: flex;
   flex-direction: column;
-  padding: 80px 110px;
+  padding: 80px 180px;
   gap: 50px;
 `;
 const TitleText = styled.p`
