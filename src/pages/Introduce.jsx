@@ -3,7 +3,6 @@ import styled from "styled-components";
 export default function Introduce() {
   return (
     <Layout>
-      <TitleText>Introduce</TitleText>
       <ConTent>
         <FujanImg src="/fujan2.svg" />
         <MainText>
@@ -79,11 +78,11 @@ const SuperText = styled.p`
     letter-spacing: 10.629px;
 `;
 const Layout = styled.div`
-  border-top: 1px solid rgba(0, 0, 0, 0.33);
+  background-color:#ffffff;
   width: 100%;
   display: flex;
   flex-direction: column;
-  padding: 80px 180px;
+  padding: 120px 180px;
   gap: 50px;
 `;
 const TitleText = styled.p`

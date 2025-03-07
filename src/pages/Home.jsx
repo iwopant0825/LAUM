@@ -49,6 +49,7 @@ const Layout = styled.div`
   align-items: center;
   padding: 0 180px;
   justify-content:space-between;
+  background-color:#ffffff;
 `;
 
 const Img = styled.img`

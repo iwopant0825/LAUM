@@ -3,9 +3,7 @@ import styled from "styled-components";
 export default function Curriculum() {
   return (
     <Layout>
-      <TitleText>Curriculum</TitleText>
       <Content>
-        <ContentM1>
           <CBOX>
             <CIMG src="/stylus_pencil.svg" />
             <CTextBox>
@@ -30,8 +28,6 @@ export default function Curriculum() {
               </CContext>
             </CTextBox>
           </CBOX>
-        </ContentM1>
-        <ContentM2>
           <CBOX>
             <CIMG src="/stylus_brush.svg" />
             <CTextBox>
@@ -52,25 +48,27 @@ export default function Curriculum() {
               </CContext>
             </CTextBox>
           </CBOX>
-        </ContentM2>
       </Content>
+      <VectorImg src="/Vector.svg"/>
     </Layout>
   );
 }
 
+const VectorImg = styled.img`
+  height:1200px;
+`;
+
 const Layout = styled.div`
-  border-top: 1px solid rgba(0, 0, 0, 0.33);
   width: 100%;
   display: flex;
-  flex-direction: column;
-  padding: 80px 180px;
-  gap:50px;
+  flex-direction: row;
+  padding: 120px 300px;
+  background-color:#FDFCF7;
 `;
 const Content = styled.div`
   display: flex;
   flex-direction: column;
   gap:175px;
-  align-items:center;
 `;
 const ContentM1 = styled.div`
   display: flex;
@@ -83,12 +81,12 @@ const ContentM2 = styled.div`
 const CBOX = styled.div`
   align-items: center;
   display: flex;
-  flex-direction: column;
-  width: 400px;
+  flex-direction: row;
+  width: 55%;
   gap: 51px;
 `;
 const CIMG = styled.img`
-  width: 100px;
+  width: 80px;
 `;
 const CTextBox = styled.div`
   display: flex;
@@ -98,7 +96,7 @@ const CTextBox = styled.div`
 const CTextmini = styled.span`
   color: #000;
   font-family: "Pretendard-Regular";
-  font-size: 24px;
+  font-size: 1rem;
   font-style: normal;
   line-height: normal;
 `;
@@ -106,17 +104,18 @@ const CTitleText = styled.span`
   color: #000;
   text-align: center;
   font-family: "Pretendard-Regular";
-  font-size: 36px;
+  font-size: 1.6rem;
   font-style: normal;
   line-height: normal;
 `;
 const CContext = styled.span`
   color: #000;
   text-align: center;
-  font-family: "Pretendard-Regular";
-  font-size: 22.176px;
+  font-family: "Pretendard-Medium";
+  font-size: 1.3rem;
   font-style: normal;
   line-height: normal;
+  letter-spacing: 1px;
 `;
 
 const TitleText = styled.p`
