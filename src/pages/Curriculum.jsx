@@ -122,7 +122,7 @@ const CContext = styled.span`
 const TitleText = styled.p`
   color: #000;
   font-family: "Pretendard-Thin";
-  font-size: 33.407px;
+  font-size: 23px;
   font-style: normal;
   font-weight: 200;
   line-height: 150%; /* 50.11px */

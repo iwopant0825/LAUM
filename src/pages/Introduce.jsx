@@ -62,7 +62,7 @@ const MainText = styled.div`
 
 const IntroduceText = styled.p`
   color: #000;
-  font-size: 26px;
+  font-size: 1.2rem;
   font-style: normal;
   line-height: 150%; /* 48.713px */
   letter-spacing: 3.897px;
@@ -72,7 +72,7 @@ const SuperText = styled.p`
     color: #000;
     text-align: center;
     font-family: 'Pretendard-Thin';
-    font-size: 30.368px;
+    font-size: 30px;
     font-style: normal;
     font-weight: 300;
     line-height: 150%; /* 45.552px */
@@ -89,7 +89,7 @@ const Layout = styled.div`
 const TitleText = styled.p`
   color: #000;
   font-family: "Pretendard-Thin";
-  font-size: 33.407px;
+  font-size: 23px;
   font-style: normal;
   font-weight: 200;
   line-height: 150%; /* 50.11px */
