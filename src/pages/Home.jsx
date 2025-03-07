@@ -71,7 +71,7 @@ export default function Home() {
                 visible: {
                   opacity: 1,
                   y: 0,
-                  transition: { duration: 1, delay: 0.1 },
+                  transition: { duration: 1.1, delay: 0.1 },
                 },
               }}
             />
@@ -84,7 +84,7 @@ export default function Home() {
                 visible: {
                   opacity: 1,
                   y: 0,
-                  transition: { duration: 1, delay: 0.2 },
+                  transition: { duration: 1.1, delay: 0.3 },
                 },
               }}
             />
@@ -99,7 +99,7 @@ export default function Home() {
                 visible: {
                   opacity: 1,
                   y: 0,
-                  transition: { duration: 1, delay: 0.3 },
+                  transition: { duration: 1.1, delay: 0.5 },
                 },
               }}
             />
@@ -112,7 +112,7 @@ export default function Home() {
                 visible: {
                   opacity: 1,
                   y: 0,
-                  transition: { duration: 1, delay: 0.4 },
+                  transition: { duration: 1.1, delay: 0.7 },
                 },
               }}
             />

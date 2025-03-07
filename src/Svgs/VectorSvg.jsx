@@ -15,7 +15,7 @@ const VectorSvg = () => {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true });
 
-  const duration = window.innerWidth <= 768 ? 10 : 7;
+  const duration = window.innerWidth <= 768 ? 10 : 8;
 
   return (
     <StyledSvg
