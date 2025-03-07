@@ -1,23 +1,69 @@
 import styled from "styled-components";
+import { useState } from "react";
+import { motion } from "framer-motion";
+
 export default function Header() {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+  const toggleMenu = () => {
+    setIsMenuOpen(!isMenuOpen);
+  };
+
   return (
-    <Layout>
-      <Sections>
+    <>
+      <Layout>
+        <Sections2></Sections2>
+        <Sections>
+          <SectionText on="true">소개</SectionText>
+          <img src="/Ellipse.svg" />
+          <SectionText on="false">커리큘럼</SectionText>
+          <img src="/Ellipse.svg" />
+          <SectionText on="false">작품</SectionText>
+        </Sections>
+        <LogoImg src="/logo.svg" />
+        <ApplyBox>
+          <ApplyButton>
+            <ApplyText>지원하기</ApplyText>
+          </ApplyButton>
+        </ApplyBox>
+        <Sections2>
+          <HamImg src="/ham.svg" onClick={toggleMenu} />
+        </Sections2>
+      </Layout>
+      <MenuBox
+        as={motion.div}
+        initial={{ y: -100 }}
+        animate={{ y: isMenuOpen ? 330 : 0 }}
+        transition={{ duration: 0.4, ease: "easeInOut" }} // 마찰력 추가
+      >
         <SectionText on="true">소개</SectionText>
-        <img src="/Ellipse.svg" />
         <SectionText on="false">커리큘럼</SectionText>
-        <img src="/Ellipse.svg" />
         <SectionText on="false">작품</SectionText>
-      </Sections>
-      <LogoImg src="/logo.svg" />
-      <ApplyBox>
         <ApplyButton>
           <ApplyText>지원하기</ApplyText>
         </ApplyButton>
-      </ApplyBox>
-    </Layout>
+      </MenuBox>
+    </>
   );
 }
+
+const MenuBox = styled.div`
+  width: 100%;
+  position: fixed;
+  z-index: 99998;
+  padding: 30px 15px;
+  background-color: red;
+  gap: 30px;
+  flex-direction: column;
+  display: flex;
+  text-align: center;
+  background: rgba(255, 255, 255, 0.945);
+  top: -30%; // 처음 위치를 화면 맨 위로 설정
+  @media (min-width: 1501px) {
+    display: none;
+  }
+`;
+
 const Layout = styled.div`
   background-color: rgb(255, 255, 255);
   width: 100%;
@@ -28,11 +74,33 @@ const Layout = styled.div`
   padding: 15px 185px;
   justify-content: space-between;
   border-bottom: 0.5px solid rgba(0, 0, 0, 0.33);
+  @media (max-width: 1500px) {
+    padding: 15px 30px;
+  }
+`;
+const HamImg = styled.img`
+  display: none;
+  width: 30px;
+  @media (max-width: 1500px) {
+    display: block;
+  }
+`;
+const Sections2 = styled.div`
+  display: none;
+  width: 260px;
+  align-items: end;
+  @media (max-width: 1500px) {
+    display: flex;
+    justify-content: flex-end; // 추가된 부분
+  }
 `;
 const Sections = styled.div`
   display: flex;
   justify-content: space-between;
   width: 260px;
+  @media (max-width: 1500px) {
+    display: none;
+  }
 `;
 const SectionText = styled.p`
   color: #000;
@@ -40,6 +108,9 @@ const SectionText = styled.p`
   font-style: normal;
   line-height: normal;
   opacity: ${(props) => (props.on === "true" ? 1 : 0.3)};
+  @media (max-width: 1500px) {
+    font-size: 25px;
+  }
 `;
 
 const LogoImg = styled.img`
@@ -50,6 +121,9 @@ const ApplyBox = styled.div`
   display: flex;
   width: 260px;
   justify-content: end;
+  @media (max-width: 1500px) {
+    display: none;
+  }
 `;
 const ApplyButton = styled.div`
   border-radius: 17px;

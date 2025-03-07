@@ -3,6 +3,7 @@ import Home from "./pages/Home"
 import Introduce from "./pages/Introduce"
 import Curriculum from "./pages/Curriculum"
 import Prize from "./pages/Prize"
+import Footer from "./pages/Footer"
 
 function App() {
   return (
@@ -11,6 +12,7 @@ function App() {
       <Introduce/>
       <Curriculum/>
       <Prize/>
+      <Footer/>
     </Layout>
   )
 }
