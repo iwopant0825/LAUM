@@ -188,6 +188,7 @@ const LogoBox = styled(motion.div)`
   flex-direction: row;
   gap: 22px;
   align-items: end;
+  align-items:center;
 `;
 const LogoText = styled.p`
   color: #3f6b50;
@@ -196,6 +197,7 @@ const LogoText = styled.p`
   font-style: normal;
   line-height: 26px;
   margin-bottom: 10px;
+
 `;
 const ConText = styled(motion.p)`
   // ConText를 motion.p로 변경

@@ -147,7 +147,7 @@ const Layout = styled.div`
   background-color: #ffffff;
   justify-content: space-between;
   @media (max-width: 2000px) {
-    padding: 120px 60px;
+    padding: 120px 0px;
   }
   @media (max-width: 1200px) {
     align-items: center;
