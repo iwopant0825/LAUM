@@ -4,7 +4,7 @@ export default function Footer() {
   return (
     <Layout>
         <ApplyBox>
-            <ApplyText>아직은 지원 기간이 아니에요!</ApplyText>
+            <ApplyText>지원기간 3월 9일(일) ~ 3월 15일(토) 23시 59분</ApplyText>
         </ApplyBox>
         <FooterBox>
             <LogoImg src="/textlogowhite.svg"/>
@@ -40,6 +40,7 @@ const ApplyBox = styled.div`
   height: 130px;
   justify-content: center;
   align-items: center;
+  padding: 0px 5px;
   background: rgba(255, 252, 237, 0.28);
   @media (max-width: 1200px) {
     width: 400px;
@@ -63,7 +64,7 @@ const FooterBox = styled.div`
 const ApplyText = styled.span`
   color: #fff;
   text-align: center;
-  font-size: 1.3rem;
+  font-size: 1rem;
   font-style: normal;
   line-height: 150%; /* 42.881px */
   letter-spacing: 3.43px;

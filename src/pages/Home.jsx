@@ -4,7 +4,7 @@ import TextLogo from "../Svgs/TextLogo";
 
 export default function Home() {
   const handleApplyClick = () => {
-    alert("아직은 지원 기간이 아니에요!");
+    window.location.href = "https://forms.gle/dL3ZLHxEbLMxQicL6";
   };
   return (
     <>

@@ -20,7 +20,7 @@ export default function Header() {
   };
 
   const handleApplyClick = () => {
-    alert("아직은 지원 기간이 아니에요!");
+    window.location.href = "https://forms.gle/dL3ZLHxEbLMxQicL6";
   };
 
   return (
@@ -52,9 +52,10 @@ export default function Header() {
       </Layout>
       <MenuBox
         as={motion.div}
-        initial={{ y: -100 }}
-        animate={{ y: isMenuOpen ? 330 : 0 }}
+        initial={{ y: "-100%" }}
+        animate={{ y: isMenuOpen ? "0" : "-100%" }}
         transition={{ duration: 0.4, ease: "easeInOut" }} // 마찰력 추가
+        style={{ top: "60px" }} // Layout 바로 아래에 위치하도록 top 조정
       >
         <SectionText on="true" onClick={() => scrollToSection("introduce")}>
           소개
@@ -84,7 +85,7 @@ const MenuBox = styled.div`
   display: flex;
   text-align: center;
   background: rgba(255, 255, 255, 0.945);
-  top: -40%; // 처음 위치를 화면 맨 위로 설정
+  top: -40%;
   @media (min-width: 1501px) {
     display: none;
   }
@@ -166,4 +167,5 @@ const ApplyText = styled.p`
   font-style: normal;
   line-height: normal;
   font-family: "Pretendard-SemiBold";
+  cursor: default;
 `;
