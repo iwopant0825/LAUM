@@ -3,14 +3,7 @@ import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
 import VectorSvg from "../Svgs/VectorSvg";
 import { 
-  FloatingElement, 
-  GradientOrb, 
-  BrushSymbol, 
-  PenSymbol, 
-  PaletteSymbol,
-  BookSymbol,
-  CanvasSymbol,
-  CreativitySymbol 
+  GradientOrb
 } from "../components/Symbols";
 
 export default function Curriculum() {
@@ -44,42 +37,14 @@ export default function Curriculum() {
   const isInView2 = useInView(ref2, { once: true });
   const ref3 = useRef(null);
   const isInView3 = useInView(ref3, { once: true });
+  const ref4 = useRef(null);
+  const isInView4 = useInView(ref4, { once: true });
   
   const titleRef = useRef(null);
   const isTitleInView = useInView(titleRef, { once: true });
 
   return (
     <Layout>
-      <FloatingElement
-        top="10%"
-        left="10%"
-        delay={0}
-        duration={20}
-        range={30}
-      >
-        <BrushSymbol size={32} color="rgba(63, 108, 81, 0.3)" />
-      </FloatingElement>
-      
-      <FloatingElement
-        top="70%"
-        right="15%"
-        delay={0.5}
-        duration={25}
-        range={40}
-      >
-        <PaletteSymbol size={28} color="rgba(63, 108, 81, 0.25)" />
-      </FloatingElement>
-
-      <FloatingElement
-        top="40%"
-        right="8%"
-        delay={1}
-        duration={18}
-        range={25}
-      >
-        <CreativitySymbol size={24} color="rgba(63, 108, 81, 0.2)" />
-      </FloatingElement>
-
       <GradientOrb
         top="20%"
         left="80%"
@@ -116,7 +81,7 @@ export default function Curriculum() {
             <CurriculumCard ref={ref1}>
               <CardHeader>
                 <IconWrapper>
-                  <PenSymbol size={48} />
+                  <img src="/stylus_pen.svg" alt="일러스트 기초" width="48" height="48" />
                 </IconWrapper>
                 <CardNumber>01</CardNumber>
               </CardHeader>
@@ -146,7 +111,7 @@ export default function Curriculum() {
             <CurriculumCard ref={ref2}>
               <CardHeader>
                 <IconWrapper>
-                  <BookSymbol size={48} />
+                  <img src="/stylus_pencil.svg" alt="캐릭터 디자인 시트 제작" width="48" height="48" />
                 </IconWrapper>
                 <CardNumber>02</CardNumber>
               </CardHeader>
@@ -158,8 +123,8 @@ export default function Curriculum() {
                   variants={contextVariants}
                   custom={1}
                 >
-                  만화 이론과 실습
-                  <Semester>2학기</Semester>
+                  캐릭터 디자인 시트 제작
+                  <Semester>1학기 최종 프로젝트</Semester>
                 </CTitleText>
                 <CContext
                   as={motion.p}
@@ -168,7 +133,7 @@ export default function Curriculum() {
                   variants={contextVariants}
                   custom={1.5}
                 >
-                  만화의 기본적인 요소인 컷 분할과 효과, 연출, 스토리를 배울 수 있도록 수업을 진행합니다.
+                  수업을 통해 배운 내용들을 통해 1학기 최종 프로젝트인 캐릭터 디자인 시트를 제작합니다.
                 </CContext>
               </CardContent>
             </CurriculumCard>
@@ -176,7 +141,7 @@ export default function Curriculum() {
             <CurriculumCard ref={ref3}>
               <CardHeader>
                 <IconWrapper>
-                  <BrushSymbol size={48} />
+                  <img src="/stylus_fountain_pen.svg" alt="만화 이론과 실습" width="48" height="48" />
                 </IconWrapper>
                 <CardNumber>03</CardNumber>
               </CardHeader>
@@ -188,8 +153,8 @@ export default function Curriculum() {
                   variants={contextVariants}
                   custom={2}
                 >
-                  캐릭터 일러스트 제작
-                  <Semester>3학기</Semester>
+                  만화 이론과 실습
+                  <Semester>2학기</Semester>
                 </CTitleText>
                 <CContext
                   as={motion.p}
@@ -198,7 +163,37 @@ export default function Curriculum() {
                   variants={contextVariants}
                   custom={2.5}
                 >
-                  캐릭터의 특징과 개성을 살린 일러스트 제작 방법을 배우고, 다양한 스타일의 캐릭터를 그려봅니다.
+                  만화의 기본적인 요소인 컷 분할과 효과, 연출, 스토리를 배울 수 있도록 수업을 진행합니다.
+                </CContext>
+              </CardContent>
+            </CurriculumCard>
+
+            <CurriculumCard ref={ref4}>
+              <CardHeader>
+                <IconWrapper>
+                  <img src="/stylus_brush.svg" alt="창작 단편만화 제작" width="48" height="48" />
+                </IconWrapper>
+                <CardNumber>04</CardNumber>
+              </CardHeader>
+              <CardContent>
+                <CTitleText
+                  as={motion.h3}
+                  initial="hidden"
+                  animate={isInView4 ? "visible" : "hidden"}
+                  variants={contextVariants}
+                  custom={3}
+                >
+                  창작 단편만화 제작
+                  <Semester>2학기 최종 프로젝트</Semester>
+                </CTitleText>
+                <CContext
+                  as={motion.p}
+                  initial="hidden"
+                  animate={isInView4 ? "visible" : "hidden"}
+                  variants={contextVariants}
+                  custom={3.5}
+                >
+                  수업을 진행하며 배운 이론들을 적용시켜 최종적으로 창작 단편만화를 제작합니다.
                 </CContext>
               </CardContent>
             </CurriculumCard>
@@ -357,11 +352,15 @@ const CurriculumCard = styled.div`
   }
   
   @media (max-width: 768px) {
+    background: rgba(255, 255, 255, 0.55);
+    backdrop-filter: blur(10px);
     padding: 32px 24px;
     border-radius: 20px;
   }
   
   @media (max-width: 480px) {
+    background: rgba(255, 255, 255, 0.50);
+    backdrop-filter: blur(8px);
     padding: 24px 20px;
     border-radius: 16px;
   }
@@ -485,16 +484,26 @@ const CContext = styled(motion.p)`
 
 // VectorImg는 기존 그대로 유지
 const VectorImg = styled.div`
-  height: 1200px;
+  height: 500px;
   flex-shrink: 0;
   
   @media (max-width: 1200px) {
     position: absolute;
     opacity: 0.3;
     z-index: -1;
+    height: 400px;
   }
   
   @media (max-width: 768px) {
-    height: 800px;
+    position: absolute;
+    opacity: 0.35;
+    z-index: -1;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    top: 0;
+    left: 0;
   }
 `;

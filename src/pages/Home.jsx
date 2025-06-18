@@ -117,13 +117,13 @@ export default function Home() {
               </LogoWrapper>
               <LogoTextWrapper>
                 <LogoText>Learning Art, Unleash Me.</LogoText>
-                <LogoSubText>예술을 배우며 나를 펼치다</LogoSubText>
+                <LogoSubText>자기 자신의 발전, 끝없는 성장을 이뤄 자신의 한계를 뛰어넘는다</LogoSubText>
               </LogoTextWrapper>
             </LogoBox>
 
             <ConText variants={itemVariants}>
-              <HighlightText>LAUM</HighlightText>은 창의적인 아이디어와 감성을 자유롭게 표현하는<br/>
-              <BoldText>선린인터넷고등학교 콘텐츠디자인과</BoldText>의 일러스트 동아리입니다.
+              <HighlightText>LAUM</HighlightText>은 만화&일러스트 동아리 미르의 리브랜딩으로 탄생한<br/>
+              <BoldText>선린인터넷고등학교 콘텐츠디자인과</BoldText>의 새로운 창작 동아리입니다.
             </ConText>
 
             <FeatureGrid variants={itemVariants}>
@@ -226,13 +226,14 @@ const ContentContainer = styled(motion.div)`
   
   @media (max-width: 1200px) {
     flex-direction: column;
-    padding: 80px 40px;
+    padding: 100px 40px 80px;
     text-align: center;
   }
   
   @media (max-width: 768px) {
-    padding: 60px 20px;
+    padding: 100px 20px 60px;
     gap: 40px;
+    min-height: calc(100vh - 80px);
   }
 `;
 
@@ -272,27 +273,39 @@ const LogoTextWrapper = styled.div`
 const LogoText = styled.h2`
   color: var(--primary-color);
   font-family: "Pretendard-SemiBold";
-  font-size: 1.6rem;
+  font-size: 1.8rem;
   line-height: 1.3;
   font-weight: 600;
+  white-space: nowrap;
+  
+  @media (max-width: 1200px) {
+    font-size: 1.6rem;
+  }
   
   @media (max-width: 768px) {
     font-size: 1.4rem;
+    white-space: normal;
   }
   
   @media (max-width: 480px) {
-    font-size: 1.2rem;
+    font-size: 1.3rem;
   }
 `;
 
 const LogoSubText = styled.p`
   color: var(--text-light);
   font-family: "Pretendard-Regular";
-  font-size: 1.1rem;
+  font-size: 1.2rem;
   line-height: 1.4;
+  white-space: nowrap;
+  
+  @media (max-width: 1200px) {
+    font-size: 1.1rem;
+  }
   
   @media (max-width: 768px) {
     font-size: 1rem;
+    white-space: normal;
   }
   
   @media (max-width: 480px) {
@@ -312,14 +325,14 @@ const ConText = styled(motion.div)`
   }
   
   @media (max-width: 768px) {
-    font-size: 1.3rem;
+    font-size: 1.2rem;
     br {
       display: none;
     }
   }
   
   @media (max-width: 480px) {
-    font-size: 1.2rem;
+    font-size: 1.1rem;
     line-height: 1.5;
   }
 `;
@@ -463,19 +476,19 @@ const ImageGrid = styled(motion.div)`
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 16px;
-  max-width: 480px;
+  max-width: 380px;
   
   @media (max-width: 1200px) {
-    max-width: 420px;
+    max-width: 340px;
   }
   
   @media (max-width: 768px) {
-    max-width: 350px;
+    max-width: 300px;
     gap: 12px;
   }
   
   @media (max-width: 480px) {
-    max-width: 100%;
+    max-width: 280px;
     gap: 10px;
   }
 `;
@@ -519,7 +532,8 @@ const ImageCard = styled(motion.div)`
 
 const Img = styled.img`
   width: 100%;
-  height: auto;
+  height: 100%;
+  object-fit: cover;
   display: block;
   transition: transform 0.3s ease;
   

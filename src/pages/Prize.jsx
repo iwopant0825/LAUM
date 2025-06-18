@@ -390,6 +390,14 @@ const PrizeItemContainer = styled(Card3D)`
   
   @media (max-width: 768px) {
     padding: 20px 15px;
+    gap: 15px;
+    flex-direction: column;
+    text-align: center;
+  }
+  
+  @media (max-width: 480px) {
+    padding: 15px 12px;
+    gap: 12px;
   }
 `;
 
@@ -414,10 +422,13 @@ const PrizeItemText = styled.div`
   
   @media (max-width: 768px) {
     font-size: 1.1rem;
+    line-height: 1.5;
+    text-align: center;
   }
   
   @media (max-width: 480px) {
     font-size: 1rem;
+    line-height: 1.4;
   }
 `;
 
@@ -429,6 +440,19 @@ const AwardLevel = styled.span`
   padding: 4px 12px;
   border-radius: 15px;
   margin: 0 8px;
+  display: inline-block;
+  
+  @media (max-width: 768px) {
+    margin: 4px 6px;
+    padding: 3px 10px;
+    font-size: 0.9rem;
+  }
+  
+  @media (max-width: 480px) {
+    margin: 2px 4px;
+    padding: 2px 8px;
+    font-size: 0.85rem;
+  }
 `;
 
 const PrizeNameText = styled.span`
@@ -439,6 +463,19 @@ const PrizeNameText = styled.span`
   padding: 4px 12px;
   border-radius: 15px;
   margin-left: 10px;
+  display: inline-block;
+  
+  @media (max-width: 768px) {
+    margin: 4px 6px;
+    padding: 3px 10px;
+    font-size: 0.9rem;
+  }
+  
+  @media (max-width: 480px) {
+    margin: 2px 4px;
+    padding: 2px 8px;
+    font-size: 0.85rem;
+  }
 `;
 
 const StatsSection = styled.div`
@@ -475,10 +512,26 @@ const StatNumber = styled.div`
   font-size: 3rem;
   font-weight: 700;
   margin-bottom: 10px;
+  
+  @media (max-width: 768px) {
+    font-size: 2.5rem;
+  }
+  
+  @media (max-width: 480px) {
+    font-size: 2rem;
+  }
 `;
 
 const StatLabel = styled.div`
   color: var(--text-light);
   font-family: "Pretendard-Regular";
   font-size: 1.1rem;
+  
+  @media (max-width: 768px) {
+    font-size: 1rem;
+  }
+  
+  @media (max-width: 480px) {
+    font-size: 0.9rem;
+  }
 `;

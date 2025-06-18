@@ -3,11 +3,22 @@ import { motion, useInView } from "framer-motion";
 import styled from "styled-components";
 
 const StyledSvg = styled.svg`
-  width: 563px;
-  height: 2281px;
+  width: 300px;
+  height: 1200px;
+
+  @media (max-width: 1200px) {
+    width: 250px;
+    height: 1000px;
+  }
 
   @media (max-width: 768px) {
-    width: 100%;
+    width: 400px;
+    height: 1600px;
+  }
+
+  @media (max-width: 480px) {
+    width: 350px;
+    height: 1400px;
   }
 `;
 
