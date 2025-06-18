@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import { motion } from "framer-motion";
-import { FloatingElement, GradientOrb, CalendarSymbol, CreativitySymbol, TeamSymbol } from "../components/Symbols";
+import { FloatingElement, GradientOrb } from "../components/Symbols";
 
 // Social Media Icons
 const InstagramIcon = ({ size = 24 }) => (
@@ -83,9 +83,7 @@ export default function Footer() {
             whileHover={{ scale: 1.02, y: -5 }}
             transition={{ duration: 0.3 }}
           >
-            <ApplyIcon>
-              <CalendarSymbol size={32} color="white" />
-            </ApplyIcon>
+            <ApplyIcon>📅</ApplyIcon>
             <ApplyTextContainer>
               <ApplyTitle>2기 모집</ApplyTitle>
               <ApplyText>지원기간: 3월 9일(일) ~ 3월 15일(토) 23시 59분</ApplyText>
@@ -216,18 +214,10 @@ const ApplyCard = styled(motion.div)`
 `;
 
 const ApplyIcon = styled.div`
-  width: 60px;
-  height: 60px;
-  background: linear-gradient(135deg, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.1));
-  border-radius: 16px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-shrink: 0;
+  font-size: 2.5rem;
   
   @media (max-width: 768px) {
-    width: 50px;
-    height: 50px;
+    font-size: 2rem;
   }
 `;
 

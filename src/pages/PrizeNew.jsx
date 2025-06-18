@@ -269,7 +269,7 @@ const HeaderSection = styled.div`
 const TitleText = styled(motion.h1)`
   color: var(--primary-color);
   font-family: "Pretendard-Bold";
-  font-size: 3.5rem;
+  font-size: 3rem;
   font-weight: 700;
   position: relative;
   
@@ -285,35 +285,16 @@ const TitleText = styled(motion.h1)`
     border-radius: 2px;
   }
   
-  @media (max-width: 1200px) {
-    font-size: 3rem;
-  }
-  
   @media (max-width: 768px) {
-    font-size: 2.5rem;
-  }
-  
-  @media (max-width: 480px) {
-    font-size: 2rem;
+    font-size: 2.2rem;
   }
 `;
 
 const SubtitleText = styled(motion.p)`
   color: var(--text-light);
   font-family: "Pretendard-Regular";
-  font-size: 1.3rem;
+  font-size: 1.2rem;
   line-height: 1.6;
-  max-width: 600px;
-  margin: 0 auto;
-  
-  @media (max-width: 768px) {
-    font-size: 1.2rem;
-    max-width: 100%;
-  }
-  
-  @media (max-width: 480px) {
-    font-size: 1.1rem;
-  }
 `;
 
 const PrizeContainer = styled(motion.div)`
@@ -344,23 +325,10 @@ const YearBadge = styled.div`
   padding: 15px 30px;
   border-radius: 25px;
   font-family: "Pretendard-Bold";
-  font-size: 1.5rem;
+  font-size: 1.4rem;
   font-weight: 700;
   box-shadow: var(--shadow-soft);
   min-width: 120px;
-  text-align: center;
-  
-  @media (max-width: 768px) {
-    font-size: 1.3rem;
-    padding: 12px 24px;
-    min-width: 100px;
-  }
-  
-  @media (max-width: 480px) {
-    font-size: 1.2rem;
-    padding: 10px 20px;
-    min-width: 80px;
-  }
   text-align: center;
 `;
 
@@ -408,15 +376,11 @@ const PrizeItemIcon = styled.div`
 const PrizeItemText = styled.div`
   color: var(--text-dark);
   font-family: "Pretendard-Regular";
-  font-size: 1.2rem;
+  font-size: 1.1rem;
   line-height: 1.6;
   flex: 1;
   
   @media (max-width: 768px) {
-    font-size: 1.1rem;
-  }
-  
-  @media (max-width: 480px) {
     font-size: 1rem;
   }
 `;

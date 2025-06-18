@@ -2,16 +2,20 @@ import styled from "styled-components";
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
 import VectorSvg from "../Svgs/VectorSvg";
-import { 
-  FloatingElement, 
-  GradientOrb, 
-  BrushSymbol, 
-  PenSymbol, 
-  PaletteSymbol,
-  BookSymbol,
-  CanvasSymbol,
-  CreativitySymbol 
-} from "../components/Symbols";
+import { FloatingElement, GradientOrb } from "../components/Symbols";
+
+// Curriculum Icons
+const PencilIcon = ({ size = 40, color = "var(--primary-color)" }) => (
+  <svg width={size} height={size} viewBox="0 0 24 24" fill="none">
+    <path d="M3 17.25V21h3.75L17.81 9.94l-3.75-3.75L3 17.25zM21.41 6.34l-3.75-3.75-1.42 1.42 3.75 3.75 1.42-1.42z" fill={color}/>
+  </svg>
+);
+
+const BrushIcon = ({ size = 40, color = "var(--primary-color)" }) => (
+  <svg width={size} height={size} viewBox="0 0 24 24" fill="none">
+    <path d="M7 14c-1.66 0-3 1.34-3 3 0 1.31-1.16 2-2 2 .92 1.22 2.49 2 4 2 2.21 0 4-1.79 4-4 0-1.66-1.34-3-3-3zM20.71 4.63l-1.34-1.34c-.39-.39-1.02-.39-1.41 0L9 12.25 11.75 15l8.96-8.96c.39-.39.39-1.02 0-1.41z" fill={color}/>
+  </svg>
+);
 
 export default function Curriculum() {
   const contextVariants = {
@@ -44,48 +48,55 @@ export default function Curriculum() {
   const isInView2 = useInView(ref2, { once: true });
   const ref3 = useRef(null);
   const isInView3 = useInView(ref3, { once: true });
-  
+  const ref4 = useRef(null);
+  const isInView4 = useInView(ref4, { once: true });
   const titleRef = useRef(null);
   const isTitleInView = useInView(titleRef, { once: true });
 
   return (
     <Layout>
+      {/* 배경 장식 요소들 */}
       <FloatingElement
-        top="10%"
-        left="10%"
-        delay={0}
-        duration={20}
-        range={30}
+        style={{ top: '15%', left: '5%' }}
+        animate={{ 
+          rotate: 360,
+          scale: [1, 1.1, 1]
+        }}
+        transition={{ 
+          rotate: { duration: 30, repeat: Infinity, ease: "linear" },
+          scale: { duration: 6, repeat: Infinity, ease: "easeInOut" }
+        }}
       >
-        <BrushSymbol size={32} color="rgba(63, 108, 81, 0.3)" />
-      </FloatingElement>
-      
-      <FloatingElement
-        top="70%"
-        right="15%"
-        delay={0.5}
-        duration={25}
-        range={40}
-      >
-        <PaletteSymbol size={28} color="rgba(63, 108, 81, 0.25)" />
+        <PencilIcon size={60} color="rgba(63, 108, 81, 0.1)" />
       </FloatingElement>
 
       <FloatingElement
-        top="40%"
-        right="8%"
-        delay={1}
-        duration={18}
-        range={25}
+        style={{ bottom: '20%', right: '8%' }}
+        animate={{ 
+          y: [0, -25, 0],
+          rotate: [0, 15, 0]
+        }}
+        transition={{ 
+          duration: 5.5,
+          repeat: Infinity,
+          ease: "easeInOut"
+        }}
       >
-        <CreativitySymbol size={24} color="rgba(63, 108, 81, 0.2)" />
+        <BrushIcon size={50} color="rgba(133, 200, 160, 0.15)" />
       </FloatingElement>
 
-      <GradientOrb
-        top="20%"
-        left="80%"
-        color="rgba(63, 108, 81, 0.1)"
-        size="300px"
-        delay={1}
+      <GradientOrb 
+        size="250px"
+        style={{ top: '10%', right: '-10%' }}
+        animate={{ 
+          scale: [1, 1.3, 1],
+          opacity: [0.1, 0.3, 0.1]
+        }}
+        transition={{ 
+          duration: 9,
+          repeat: Infinity,
+          ease: "easeInOut"
+        }}
       />
 
       <ContentWrapper>
@@ -116,7 +127,7 @@ export default function Curriculum() {
             <CurriculumCard ref={ref1}>
               <CardHeader>
                 <IconWrapper>
-                  <PenSymbol size={48} />
+                  <img src="/stylus_pencil.svg" alt="pencil" />
                 </IconWrapper>
                 <CardNumber>01</CardNumber>
               </CardHeader>
@@ -146,7 +157,7 @@ export default function Curriculum() {
             <CurriculumCard ref={ref2}>
               <CardHeader>
                 <IconWrapper>
-                  <BookSymbol size={48} />
+                  <img src="/stylus_pen.svg" alt="pen" />
                 </IconWrapper>
                 <CardNumber>02</CardNumber>
               </CardHeader>
@@ -168,7 +179,7 @@ export default function Curriculum() {
                   variants={contextVariants}
                   custom={1.5}
                 >
-                  만화의 기본적인 요소인 컷 분할과 효과, 연출, 스토리를 배울 수 있도록 수업을 진행합니다.
+                  만화의 기본적인 요소인 컷 분활과 효과, 연출, 스토리를 배울 수 있도록 수업을 진행합니다.
                 </CContext>
               </CardContent>
             </CurriculumCard>
@@ -176,7 +187,7 @@ export default function Curriculum() {
             <CurriculumCard ref={ref3}>
               <CardHeader>
                 <IconWrapper>
-                  <BrushSymbol size={48} />
+                  <img src="/stylus_brush.svg" alt="brush" />
                 </IconWrapper>
                 <CardNumber>03</CardNumber>
               </CardHeader>
@@ -189,7 +200,6 @@ export default function Curriculum() {
                   custom={2}
                 >
                   캐릭터 일러스트 제작
-                  <Semester>3학기</Semester>
                 </CTitleText>
                 <CContext
                   as={motion.p}
@@ -198,13 +208,41 @@ export default function Curriculum() {
                   variants={contextVariants}
                   custom={2.5}
                 >
-                  캐릭터의 특징과 개성을 살린 일러스트 제작 방법을 배우고, 다양한 스타일의 캐릭터를 그려봅니다.
+                  수업을 통해 배운 내용들을 통해 1학기 최종 프로젝트인 캐릭터 디자인 시트를 제작합니다.
+                </CContext>
+              </CardContent>
+            </CurriculumCard>
+
+            <CurriculumCard ref={ref4}>
+              <CardHeader>
+                <IconWrapper>
+                  <img src="/stylus_fountain_pen.svg" alt="fountain pen" />
+                </IconWrapper>
+                <CardNumber>04</CardNumber>
+              </CardHeader>
+              <CardContent>
+                <CTitleText
+                  as={motion.h3}
+                  initial="hidden"
+                  animate={isInView4 ? "visible" : "hidden"}
+                  variants={contextVariants}
+                  custom={3}
+                >
+                  창작 단편만화 제작
+                </CTitleText>
+                <CContext
+                  as={motion.p}
+                  initial="hidden"
+                  animate={isInView4 ? "visible" : "hidden"}
+                  variants={contextVariants}
+                  custom={3.5}
+                >
+                  수업을 진행하며 배운 이론들을 적용시켜 최종적으로 창작 단편만화를 제작합니다.
                 </CContext>
               </CardContent>
             </CurriculumCard>
           </Content>
 
-          {/* VectorImg는 기존 그대로 유지 */}
           <VectorImg>
             <VectorSvg />
           </VectorImg>
@@ -214,22 +252,21 @@ export default function Curriculum() {
   );
 }
 
-// 스타일드 컴포넌트들
 const Layout = styled.div`
+  width: 100%;
   min-height: 100vh;
+  background: linear-gradient(135deg, 
+    rgba(255, 255, 255, 0.95) 0%, 
+    rgba(248, 252, 251, 0.95) 100%);
   position: relative;
-  background: linear-gradient(135deg, var(--background-color) 0%, var(--background-light) 100%);
   overflow: hidden;
 `;
 
 const ContentWrapper = styled.div`
-  position: relative;
-  z-index: 2;
+  width: 100%;
+  padding: 120px 120px;
   display: flex;
   flex-direction: column;
-  padding: 120px 80px;
-  max-width: 1600px;
-  margin: 0 auto;
   gap: 80px;
   
   @media (max-width: 1500px) {
@@ -242,7 +279,7 @@ const ContentWrapper = styled.div`
   }
   
   @media (max-width: 768px) {
-    padding: 60px 24px;
+    padding: 60px 20px;
     gap: 50px;
   }
 `;
@@ -251,13 +288,13 @@ const HeaderSection = styled.div`
   text-align: center;
   display: flex;
   flex-direction: column;
-  gap: 24px;
+  gap: 20px;
 `;
 
 const SectionTitle = styled(motion.h1)`
   color: var(--primary-color);
   font-family: "Pretendard-Bold";
-  font-size: 3.5rem;
+  font-size: 3rem;
   font-weight: 700;
   position: relative;
   
@@ -269,217 +306,163 @@ const SectionTitle = styled(motion.h1)`
     transform: translateX(-50%);
     width: 80px;
     height: 4px;
-    background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+    background: linear-gradient(90deg, var(--primary-color), var(--accent-color));
     border-radius: 2px;
   }
   
-  @media (max-width: 1200px) {
-    font-size: 3rem;
-  }
-  
   @media (max-width: 768px) {
-    font-size: 2.5rem;
-  }
-  
-  @media (max-width: 480px) {
-    font-size: 2rem;
+    font-size: 2.2rem;
   }
 `;
 
 const SectionDescription = styled(motion.p)`
   color: var(--text-light);
-  font-family: "Pretendard-Medium";
-  font-size: 1.3rem;
-  line-height: 1.8;
-  max-width: 600px;
-  margin: 0 auto;
-  
-  @media (max-width: 768px) {
-    font-size: 1.1rem;
-    max-width: 100%;
-  }
-  
-  @media (max-width: 480px) {
-    font-size: 1rem;
-  }
+  font-family: "Pretendard-Regular";
+  font-size: 1.2rem;
+  line-height: 1.6;
 `;
 
 const MainContent = styled.div`
   display: flex;
-  gap: 60px;
-  align-items: flex-start;
+  justify-content: space-between;
+  gap: 100px;
   
   @media (max-width: 1200px) {
+    align-items: center;
+    justify-content: center;
     flex-direction: column;
-    gap: 40px;
   }
 `;
 
 const Content = styled(motion.div)`
-  flex: 1;
   display: flex;
   flex-direction: column;
-  gap: 32px;
+  gap: 60px;
+  flex: 1;
   
-  @media (max-width: 768px) {
-    gap: 24px;
+  @media (max-width: 1200px) {
+    align-items: center;
+    gap: 50px;
   }
 `;
 
 const CurriculumCard = styled.div`
-  background: rgba(255, 255, 255, 0.95);
-  backdrop-filter: blur(20px);
-  border-radius: 24px;
-  padding: 40px;
-  box-shadow: 
-    0 20px 40px rgba(0, 0, 0, 0.1),
-    0 8px 16px rgba(0, 0, 0, 0.05);
-  border: 1px solid rgba(255, 255, 255, 0.2);
+  background: rgba(255, 255, 255, 0.9);
+  border-radius: 25px;
+  padding: 35px;
+  box-shadow: var(--shadow-soft);
+  backdrop-filter: blur(10px);
+  border: 1px solid var(--border-light);
   transition: all 0.3s ease;
-  position: relative;
-  overflow: hidden;
-  
-  &::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    height: 4px;
-    background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
-  }
+  display: flex;
+  gap: 30px;
+  align-items: flex-start;
   
   &:hover {
     transform: translateY(-8px);
-    box-shadow: 
-      0 30px 60px rgba(0, 0, 0, 0.15),
-      0 12px 24px rgba(0, 0, 0, 0.08);
+    box-shadow: var(--shadow-hover);
   }
   
   @media (max-width: 768px) {
-    padding: 32px 24px;
-    border-radius: 20px;
-  }
-  
-  @media (max-width: 480px) {
-    padding: 24px 20px;
-    border-radius: 16px;
+    padding: 25px;
+    gap: 20px;
   }
 `;
 
 const CardHeader = styled.div`
   display: flex;
+  flex-direction: column;
   align-items: center;
-  gap: 20px;
-  margin-bottom: 24px;
-  
-  @media (max-width: 480px) {
-    gap: 16px;
-    margin-bottom: 20px;
-  }
+  gap: 15px;
+  min-width: 100px;
 `;
 
 const IconWrapper = styled.div`
-  width: 72px;
-  height: 72px;
-  background: rgba(63, 108, 81, 0.1);
-  border-radius: 20px;
+  width: 70px;
+  height: 70px;
+  background: linear-gradient(135deg, var(--primary-color), var(--primary-light));
+  border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
-  transition: all 0.3s ease;
+  box-shadow: var(--shadow-soft);
   
-  &:hover {
-    background: rgba(63, 108, 81, 0.15);
-    transform: scale(1.05);
+  img {
+    width: 35px;
+    height: 35px;
+    filter: brightness(0) invert(1);
   }
   
   @media (max-width: 768px) {
-    width: 64px;
-    height: 64px;
-  }
-  
-  @media (max-width: 480px) {
-    width: 56px;
-    height: 56px;
+    width: 60px;
+    height: 60px;
+    
+    img {
+      width: 30px;
+      height: 30px;
+    }
   }
 `;
 
 const CardNumber = styled.div`
+  background: var(--accent-color);
+  color: white;
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   font-family: "Pretendard-Bold";
-  font-size: 2.5rem;
+  font-size: 1rem;
   font-weight: 700;
-  color: var(--primary-color);
-  opacity: 0.7;
-  
-  @media (max-width: 768px) {
-    font-size: 2rem;
-  }
-  
-  @media (max-width: 480px) {
-    font-size: 1.8rem;
-  }
 `;
 
 const CardContent = styled.div`
+  flex: 1;
   display: flex;
   flex-direction: column;
-  gap: 16px;
+  gap: 20px;
 `;
 
 const CTitleText = styled(motion.h3)`
-  color: var(--primary-color);
-  font-family: "Pretendard-Bold";
-  font-size: 1.8rem;
-  font-weight: 700;
+  color: var(--text-dark);
+  font-family: "Pretendard-SemiBold";
+  font-size: 1.6rem;
+  font-weight: 600;
+  line-height: 1.3;
   display: flex;
   align-items: center;
-  gap: 16px;
-  flex-wrap: wrap;
+  gap: 15px;
   
   @media (max-width: 768px) {
-    font-size: 1.5rem;
-    gap: 12px;
-  }
-  
-  @media (max-width: 480px) {
-    font-size: 1.3rem;
-    gap: 8px;
+    font-size: 1.4rem;
     flex-direction: column;
     align-items: flex-start;
+    gap: 10px;
   }
 `;
 
 const Semester = styled.span`
-  background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
-  color: white;
+  background: rgba(63, 108, 81, 0.1);
+  color: var(--primary-color);
   font-family: "Pretendard-Medium";
-  font-size: 1rem;
+  font-size: 0.9rem;
   font-weight: 500;
-  padding: 8px 16px;
+  padding: 6px 15px;
   border-radius: 20px;
   white-space: nowrap;
-  
-  @media (max-width: 480px) {
-    font-size: 0.9rem;
-    padding: 6px 12px;
-  }
 `;
 
 const CContext = styled(motion.p)`
   color: var(--text-light);
   font-family: "Pretendard-Regular";
-  font-size: 1.2rem;
-  line-height: 1.8;
-  letter-spacing: 0.3px;
+  font-size: 1.1rem;
+  line-height: 1.7;
+  letter-spacing: 0.5px;
   
   @media (max-width: 768px) {
-    font-size: 1.1rem;
-  }
-  
-  @media (max-width: 480px) {
     font-size: 1rem;
-    line-height: 1.7;
   }
 `;
 

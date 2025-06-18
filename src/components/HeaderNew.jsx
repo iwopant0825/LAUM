@@ -249,7 +249,7 @@ const Navigation = styled.nav`
 const NavItem = styled(motion.div)`
   color: var(--text-dark);
   font-family: "Pretendard-Medium";
-  font-size: 1.2rem;
+  font-size: 1.1rem;
   font-weight: 500;
   cursor: pointer;
   position: relative;
@@ -269,10 +269,6 @@ const NavItem = styled(motion.div)`
   
   &:hover::after {
     transform: translateX(-50%) scaleX(1);
-  }
-  
-  @media (max-width: 1500px) {
-    font-size: 1.1rem;
   }
 `;
 

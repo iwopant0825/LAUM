@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
-import { BrushSymbol, CanvasSymbol, TeamSymbol, FloatingElement, GradientOrb, Card3D } from "../components/Symbols";
+import { BrushSymbol, CanvasSymbol, FloatingElement, GradientOrb, Card3D } from "../components/Symbols";
 
 export default function Introduce() {
   const text =
@@ -167,9 +167,7 @@ export default function Introduce() {
             </ValueCard>
 
             <ValueCard variants={itemVariants}>
-              <ValueIcon>
-                <TeamSymbol size={40} />
-              </ValueIcon>
+              <ValueIcon style={{ fontSize: '40px' }}>🎨</ValueIcon>
               <ValueContent>
                 <ValueTitle>협력</ValueTitle>
                 <ValueDescription>동료들과 함께 성장하며 서로의 꿈을 응원합니다</ValueDescription>
@@ -279,7 +277,7 @@ const TextSection = styled.div`
 const SectionTitle = styled(motion.h2)`
   color: var(--primary-color);
   font-family: "Pretendard-Bold";
-  font-size: 2.8rem;
+  font-size: 2.2rem;
   font-weight: 700;
   position: relative;
   
@@ -296,47 +294,29 @@ const SectionTitle = styled(motion.h2)`
   
   @media (max-width: 1200px) {
     text-align: center;
-    font-size: 2.4rem;
     
     &::after {
       left: 50%;
       transform: translateX(-50%);
     }
   }
-  
-  @media (max-width: 768px) {
-    font-size: 2rem;
-  }
-  
-  @media (max-width: 480px) {
-    font-size: 1.8rem;
-  }
 `;
 
 const IntroduceText = styled.p`
   color: var(--text-dark);
   font-family: "Pretendard-Regular";
-  font-size: 1.3rem;
+  font-size: 1.4rem;
   line-height: 1.8;
-  letter-spacing: 0.5px;
-  
-  @media (max-width: 768px) {
-    font-size: 1.2rem;
-  }
-  
-  @media (max-width: 480px) {
-    font-size: 1.1rem;
-    line-height: 1.7;
-  }
+  letter-spacing: 1px;
 `;
 
 const SuperText = styled(motion.div)`
   color: var(--primary-color);
   font-family: "Pretendard-Light";
-  font-size: 1.6rem;
+  font-size: 1.8rem;
   font-weight: 300;
   line-height: 1.6;
-  letter-spacing: 2px;
+  letter-spacing: 3px;
   text-align: center;
   position: relative;
   padding: 30px;
@@ -347,17 +327,7 @@ const SuperText = styled(motion.div)`
   backdrop-filter: blur(10px);
   
   @media (max-width: 768px) {
-    font-size: 1.3rem;
-    padding: 24px;
-    letter-spacing: 1px;
-  }
-  
-  @media (max-width: 480px) {
-    font-size: 1.1rem;
-    padding: 20px;
-    line-height: 1.5;
-    letter-spacing: 0.5px;
-  }
+    font-size: 1.4rem;
     padding: 25px;
   }
 `;
@@ -413,25 +383,9 @@ const ValueIcon = styled.div`
   align-items: center;
   justify-content: center;
   box-shadow: 0 8px 25px rgba(63, 108, 81, 0.2);
-  transition: all 0.3s ease;
-  
-  &:hover {
-    transform: scale(1.05);
-    box-shadow: 0 12px 35px rgba(63, 108, 81, 0.3);
-  }
   
   svg {
     filter: brightness(0) invert(1);
-  }
-  
-  @media (max-width: 768px) {
-    width: 70px;
-    height: 70px;
-  }
-  
-  @media (max-width: 480px) {
-    width: 60px;
-    height: 60px;
   }
 `;
 
@@ -444,30 +398,13 @@ const ValueContent = styled.div`
 const ValueTitle = styled.h3`
   color: var(--text-dark);
   font-family: "Pretendard-SemiBold";
-  font-size: 1.5rem;
+  font-size: 1.4rem;
   font-weight: 600;
-  
-  @media (max-width: 768px) {
-    font-size: 1.3rem;
-  }
-  
-  @media (max-width: 480px) {
-    font-size: 1.2rem;
-  }
 `;
 
 const ValueDescription = styled.p`
   color: var(--text-light);
   font-family: "Pretendard-Regular";
-  font-size: 1.1rem;
+  font-size: 1rem;
   line-height: 1.6;
-  
-  @media (max-width: 768px) {
-    font-size: 1rem;
-  }
-  
-  @media (max-width: 480px) {
-    font-size: 0.95rem;
-    line-height: 1.5;
-  }
 `;

@@ -4,8 +4,27 @@
   box-sizing: border-box;
   font-family: "Pretendard-Regular" ;
 }
+
+html {
+  scroll-behavior: smooth;
+}
+
 body{
-  background-color: #ffffff;
+  background: linear-gradient(135deg, #ffffff 0%, #f8fffe 100%);
+  overflow-x: hidden;
+}
+
+:root {
+  --primary-color: #3F6C51;
+  --primary-light: #4A7A5F;
+  --primary-dark: #2F5440;
+  --accent-color: #85C8A0;
+  --text-dark: #1a1a1a;
+  --text-light: #666666;
+  --background-light: #fafcfb;
+  --border-light: #e8f2ed;
+  --shadow-soft: 0 4px 20px rgba(63, 108, 81, 0.1);
+  --shadow-hover: 0 8px 30px rgba(63, 108, 81, 0.15);
 }
 
 @font-face {
