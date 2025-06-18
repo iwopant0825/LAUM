@@ -118,18 +118,15 @@ export default function Footer() {
           <FooterRight variants={itemVariants}>
             <SocialLinks>
               <SocialLink
+                as="a"
+                href="https://www.instagram.com/laum.__.official?igsh=MWUyOG44NzBhZ2dydg=="
+                target="_blank"
+                rel="noopener noreferrer"
                 whileHover={{ scale: 1.1, rotate: 5 }}
                 whileTap={{ scale: 0.9 }}
               >
                 <InstagramIcon size={20} />
                 <span>Instagram</span>
-              </SocialLink>
-              <SocialLink
-                whileHover={{ scale: 1.1, rotate: -5 }}
-                whileTap={{ scale: 0.9 }}
-              >
-                <EmailIcon size={20} />
-                <span>Contact</span>
               </SocialLink>
             </SocialLinks>
 

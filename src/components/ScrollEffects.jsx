@@ -53,7 +53,7 @@ export const PageLoader = ({ isLoading, onComplete }) => {
     if (isLoading) {
       const timer = setTimeout(() => {
         onComplete();
-      }, 2000);
+      }, 1500);
       return () => clearTimeout(timer);
     }
   }, [isLoading, onComplete]);

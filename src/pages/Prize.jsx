@@ -203,30 +203,6 @@ export default function Prize() {
             </PrizeList>
           </YearSection>
         </PrizeContainer>
-
-        <StatsSection>
-          <StatCard
-            whileHover={{ scale: 1.05 }}
-            transition={{ duration: 0.3 }}
-          >
-            <StatNumber>12</StatNumber>
-            <StatLabel>총 수상 횟수</StatLabel>
-          </StatCard>
-          <StatCard
-            whileHover={{ scale: 1.05 }}
-            transition={{ duration: 0.3 }}
-          >
-            <StatNumber>8</StatNumber>
-            <StatLabel>수상자 수</StatLabel>
-          </StatCard>
-          <StatCard
-            whileHover={{ scale: 1.05 }}
-            transition={{ duration: 0.3 }}
-          >
-            <StatNumber>3</StatNumber>
-            <StatLabel>연속 수상 년도</StatLabel>
-          </StatCard>
-        </StatsSection>
       </ContentContainer>
     </Layout>
   );

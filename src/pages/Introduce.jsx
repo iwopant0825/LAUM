@@ -345,20 +345,42 @@ const SuperText = styled(motion.div)`
   border: 1px solid var(--border-light);
   box-shadow: var(--shadow-soft);
   backdrop-filter: blur(10px);
+  white-space: nowrap;
+  overflow: hidden;
   
   @media (max-width: 768px) {
     font-size: 1.3rem;
     padding: 24px;
     letter-spacing: 1px;
+    transform: scale(0.9);
+  }
+  
+  @media (max-width: 600px) {
+    transform: scale(0.8);
+    padding: 20px;
   }
   
   @media (max-width: 480px) {
     font-size: 1.1rem;
-    padding: 20px;
+    padding: 18px;
     line-height: 1.5;
     letter-spacing: 0.5px;
+    transform: scale(0.7);
   }
-    padding: 25px;
+  
+  @media (max-width: 400px) {
+    transform: scale(0.65);
+    padding: 16px;
+  }
+  
+  @media (max-width: 350px) {
+    transform: scale(0.6);
+    padding: 14px;
+  }
+  
+  @media (max-width: 320px) {
+    transform: scale(0.55);
+    padding: 12px;
   }
 `;
 
