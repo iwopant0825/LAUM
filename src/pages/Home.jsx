@@ -198,6 +198,7 @@ const ContentContainer = styled(motion.div)`
   padding: 0 120px;
   gap: 80px;
   box-sizing: border-box;
+  overflow: visible;
   
   @media (max-width: 1500px) {
     padding: 80px 60px;
@@ -208,22 +209,24 @@ const ContentContainer = styled(motion.div)`
     flex-direction: column;
     padding: 100px 40px 80px;
     text-align: center;
-    gap: 50px;
+    gap: 60px;
+    align-items: stretch;
   }
   
   @media (max-width: 1024px) {
     padding: 90px 30px 70px;
-    gap: 45px;
+    gap: 50px;
   }
   
   @media (max-width: 768px) {
     padding: 100px 20px 60px;
-    gap: 40px;
+    gap: 50px;
     min-height: calc(100vh - 80px);
   }
   
   @media (max-width: 480px) {
     padding: 100px 15px 60px;
+    gap: 40px;
   }
   
   @media (max-width: 380px) {
@@ -238,10 +241,12 @@ const TitleSection = styled.div`
   gap: 50px;
   width: 100%;
   max-width: 100%;
-  overflow: hidden;
+  overflow: visible;
+  z-index: 2;
   
   @media (max-width: 1200px) {
     align-items: center;
+    order: 1;
   }
   
   @media (max-width: 1024px) {
@@ -295,7 +300,7 @@ const LogoTextWrapper = styled.div`
   width: 100%;
   max-width: 100%;
   min-width: 0;
-  overflow: hidden;
+  overflow: visible;
   
   @media (max-width: 768px) {
     text-align: center;
@@ -309,27 +314,39 @@ const LogoText = styled.h2`
   font-size: 1.6rem;
   line-height: 1.3;
   font-weight: 600;
-  word-break: keep-all;
+  white-space: nowrap;
+  transform-origin: center center;
   
   @media (max-width: 1200px) {
-    font-size: 1.4rem;
+    transform: scale(0.9);
   }
   
   @media (max-width: 1024px) {
-    font-size: 1.3rem;
+    transform: scale(0.85);
   }
   
   @media (max-width: 768px) {
-    font-size: 1.5rem;
-    text-align: center;
+    transform: scale(0.8);
+  }
+  
+  @media (max-width: 600px) {
+    transform: scale(0.75);
   }
   
   @media (max-width: 480px) {
-    font-size: 1.4rem;
+    transform: scale(0.7);
   }
   
-  @media (max-width: 380px) {
-    font-size: 1.3rem;
+  @media (max-width: 400px) {
+    transform: scale(0.65);
+  }
+  
+  @media (max-width: 350px) {
+    transform: scale(0.6);
+  }
+  
+  @media (max-width: 320px) {
+    transform: scale(0.55);
   }
 `;
 
@@ -338,32 +355,39 @@ const LogoSubText = styled.p`
   font-family: "Pretendard-Regular";
   font-size: 1.2rem;
   line-height: 1.4;
-  word-break: keep-all;
+  white-space: nowrap;
+  transform-origin: center center;
   
   @media (max-width: 1200px) {
-    font-size: 1.1rem;
+    transform: scale(0.9);
   }
   
   @media (max-width: 1024px) {
-    font-size: 1.0rem;
+    transform: scale(0.85);
   }
   
   @media (max-width: 768px) {
-    font-size: 1.0rem;
-    text-align: center;
-    line-height: 1.5;
+    transform: scale(0.8);
+  }
+  
+  @media (max-width: 600px) {
+    transform: scale(0.75);
   }
   
   @media (max-width: 480px) {
-    font-size: 0.95rem;
+    transform: scale(0.7);
   }
   
-  @media (max-width: 380px) {
-    font-size: 0.9rem;
+  @media (max-width: 400px) {
+    transform: scale(0.65);
+  }
+  
+  @media (max-width: 350px) {
+    transform: scale(0.6);
   }
   
   @media (max-width: 320px) {
-    font-size: 0.85rem;
+    transform: scale(0.55);
   }
 `;
 
@@ -591,6 +615,12 @@ const ImageSection = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+  z-index: 1;
+  
+  @media (max-width: 1200px) {
+    order: 2;
+    margin-top: 20px;
+  }
 `;
 
 const ImageGrid = styled(motion.div)`
