@@ -1,0 +1,29 @@
+{
+  "name": "라움 LAUM - 선린인터넷고등학교 일러스트 동아리",
+  "short_name": "라움 LAUM",
+  "description": "선린인터넷고등학교의 대표 일러스트 동아리 라움(LAUM)입니다. Learning Art, Unleash Me의 의미로 학생들의 창작 활동을 지원합니다.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#3F6C51",
+  "orientation": "portrait-primary",
+  "scope": "/",
+  "lang": "ko",
+  "dir": "ltr",
+  "categories": ["education", "art", "design"],
+  "screenshots": [
+    {
+      "src": "/logo.svg",
+      "type": "image/svg+xml",
+      "sizes": "any"
+    }
+  ],
+  "icons": [
+    {
+      "src": "/logo.svg",
+      "type": "image/svg+xml",
+      "sizes": "any",
+      "purpose": "any maskable"
+    }
+  ]
+}

@@ -23,16 +23,20 @@ function App() {
           <ScrollProgress />
           <Header />
           <PageTransition>
-            <Home />
-            <div id="introduce">
-              <Introduce />
-            </div>
-            <div id="curriculum">
-              <Curriculum />
-            </div>
-            <div id="prize">
-              <Prize />
-            </div>
+            <main>
+              <section id="home" aria-label="라움 동아리 소개">
+                <Home />
+              </section>
+              <section id="introduce" aria-label="라움 동아리 상세 소개">
+                <Introduce />
+              </section>
+              <section id="curriculum" aria-label="라움 동아리 커리큘럼">
+                <Curriculum />
+              </section>
+              <section id="prize" aria-label="라움 동아리 수상 실적">
+                <Prize />
+              </section>
+            </main>
             <Footer />
           </PageTransition>
           <ScrollToTopButton />

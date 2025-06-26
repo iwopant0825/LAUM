@@ -47,6 +47,13 @@ export default function Home() {
   return (
     <>
       <Layout>
+        {/* SEO용 숨겨진 헤더 */}
+        <SEOHeader>
+          <h1>라움 LAUM - 선린인터넷고등학교 일러스트 동아리</h1>
+          <h2>선린 라움에서 시작하는 일러스트 창작 여정</h2>
+          <p>라움(LAUM)은 선린인터넷고등학교 콘텐츠디자인과의 대표 일러스트 동아리입니다. Learning Art, Unleash Me의 의미로 학생들의 예술적 잠재력과 창작 능력을 발휘할 수 있도록 지원하는 선린 라움 동아리입니다.</p>
+        </SEOHeader>
+
         {/* 배경 장식 요소들 */}
         <FloatingElement
           style={{ top: '10%', left: '5%' }}
@@ -122,8 +129,9 @@ export default function Home() {
             </LogoBox>
 
             <ConText variants={itemVariants}>
-              <HighlightText>LAUM</HighlightText>은 만화&일러스트 동아리 미르의 리브랜딩으로 탄생한<br/>
-              <BoldText>선린인터넷고등학교 콘텐츠디자인과</BoldText>의 새로운 창작 동아리입니다.
+              <HighlightText>라움(LAUM)</HighlightText>은 만화&일러스트 동아리 미르의 리브랜딩으로 탄생한<br/>
+              <BoldText>선린인터넷고등학교 콘텐츠디자인과</BoldText>의 새로운 창작 동아리입니다.<br/>
+              <SubText>선린 라움에서 여러분의 창작 능력을 발휘해보세요!</SubText>
             </ConText>
 
             <ApplyBox variants={itemVariants}>
@@ -148,27 +156,27 @@ export default function Home() {
               animate="visible"
             >
               <ImageCard variants={imageVariants}>
-                <Img src="/picture/1.png" />
+                <Img src="/picture/1.png" alt="라움 동아리 일러스트 작품 - 선린인터넷고등학교" />
                 <ImageOverlay>
-                  <ImageLabel>일러스트 작품</ImageLabel>
+                  <ImageLabel>라움 일러스트 작품</ImageLabel>
                 </ImageOverlay>
               </ImageCard>
               <ImageCard variants={imageVariants}>
-                <Img src="/picture/2.png" />
+                <Img src="/picture/2.png" alt="라움 동아리 디지털 아트 작품 - 선린인터넷고등학교" />
                 <ImageOverlay>
-                  <ImageLabel>일러스트 작품</ImageLabel>
+                  <ImageLabel>라움 디지털 아트</ImageLabel>
                 </ImageOverlay>
               </ImageCard>
               <ImageCard variants={imageVariants}>
-                <Img src="/picture/3.png" />
+                <Img src="/picture/3.png" alt="선린 라움 그래픽 디자인 작품" />
                 <ImageOverlay>
-                  <ImageLabel>일러스트 작품</ImageLabel>
+                  <ImageLabel>라움 그래픽 디자인</ImageLabel>
                 </ImageOverlay>
               </ImageCard>
               <ImageCard variants={imageVariants}>
-                <Img src="/picture/4.png" />
+                <Img src="/picture/4.png" alt="선린인터넷고등학교 라움 만화 창작 작품" />
                 <ImageOverlay>
-                  <ImageLabel>만화 창작</ImageLabel>
+                  <ImageLabel>라움 만화 창작</ImageLabel>
                 </ImageOverlay>
               </ImageCard>
             </ImageGrid>
@@ -745,6 +753,54 @@ const ImageLabel = styled.span`
   
   @media (max-width: 1024px) {
     font-size: 0.88rem;
+  }
+  
+  @media (max-width: 768px) {
+    font-size: 0.85rem;
+  }
+  
+  @media (max-width: 480px) {
+    font-size: 0.8rem;
+  }
+`;
+
+const SEOHeader = styled.div`
+  position: absolute;
+  left: -9999px;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  
+  h1, h2 {
+    margin: 0;
+    padding: 0;
+  }
+  
+  h1 {
+    font-size: 2rem;
+    font-weight: bold;
+  }
+  
+  h2 {
+    font-size: 1.5rem;
+    font-weight: 600;
+  }
+  
+  p {
+    font-size: 1rem;
+    line-height: 1.5;
+  }
+`;
+
+const SubText = styled.span`
+  color: #4a5568;
+  font-size: 0.95rem;
+  font-family: "Pretendard-Medium";
+  display: block;
+  margin-top: 8px;
+  
+  @media (max-width: 1024px) {
+    font-size: 0.9rem;
   }
   
   @media (max-width: 768px) {
